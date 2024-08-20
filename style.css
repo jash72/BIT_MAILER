@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login_page {
+    background-color: rgb(89, 159, 228);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 60px;
+}
+
+.welcome {
+    font-size: 22px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    color: #f3eeee;
+}
+
+.logo {
+    width: 280px;
+    margin-top: 5px;
+    height: auto;
+}
+
+.project_name {
+    font-size: 26px;
+    margin-top: 30px;
+    color: #ddd;
+}
+
+.divider {
+    border: none;
+    border-top: 3px solid #ddd;
+    margin: 20px auto;
+    width: 100px;
+}
+
+.login_button {
+    background-color: #063c93;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.login_button:hover {
+    background-color: #4569e9;
+}
+
+.sign {
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+#user-name {
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.logout-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f;
+}
+
+.theme-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+}
+
+.light-theme {
+    background-color: #f9fafb;
+    color: #333;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: #f9fafb;
+}
+
+.light-theme .header {
+    background-color: #007bff;
+}
+
+.dark-theme .header {
+    background-color: #222;
+}
+
+.dark-theme .logout-btn {
+    background-color: #d32f2f;
+}

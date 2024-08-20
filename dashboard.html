@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="dashboard.js" defer></script>
+</head>
+<body class="light-theme">
+    <div class="header">
+        <div class="logo">BIT-Mailer</div>
+        <div class="user-info">
+            <div id="user-icon" class="user-icon"></div>
+            <span id="user-name"></span>
+            <button class="theme-toggle" onclick="toggleTheme()">🌞</button>
+            <button class="logout-btn" onclick="signOutUser()">Logout</button>
+        </div>
+    </div>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="menu-title">Resources</div>
+            <div class="menu-item" onclick="goToMailRequest()">Mail Request Form</div>
+            <div class="menu-item">Status</div>
+        </div>
+        <div class="content">
+            <div id="scheduling-photo" class="scheduling-photo">
+                <!-- Your scheduling image or content goes here -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

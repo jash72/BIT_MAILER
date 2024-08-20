@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="bit-icon" href="bit_logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIT-MAILER</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDjRgvekqCqJT0HQXSX7T1uB4RLBB08s-c",
+            authDomain: "bitmailer-1c622.firebaseapp.com",
+            projectId: "bitmailer-1c622",
+            storageBucket: "bitmailer-1c622.appspot.com",
+            messagingSenderId: "462433082836",
+            appId: "1:462433082836:web:062756acb1be9c0cd80a41",
+            measurementId: "G-ZS7T5H77LH"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        window.signInWithGoogle = () => {
+            const provider = new GoogleAuthProvider();
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    const user = result.user;
+                    localStorage.setItem('userName', user.displayName);
+                    window.location.href = 'http://127.0.0.1:8080/dashboard.html';
+                })
+                .catch((error) => {
+                    console.error('Error signing in:', error);
+                });
+        };
+    </script>
+</head>
+<body class="light-theme">
+    <div id="login-page" class="login_page">
+        <div class="welcome">Welcome Back!</div>
+        <img src="bit_logo.png" alt="College Logo" class="logo">
+        <div class="project_name">BIT Mailer</div>
+        <hr class="divider">
+        <button class="login_button" onclick="signInWithGoogle()">Google Sign In</button>
+        <div class="sign">Sign in with your BIT account</div>
+    </div>
+</body>
+</html>
