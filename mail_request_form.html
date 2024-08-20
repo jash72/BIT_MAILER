@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mail Request Form</title>
     <link rel="stylesheet" href="dashboard.css">
-    <script src="dashboard.js" defer></script>
+    <script src="mail_request_form.js" defer></script>
 </head>
 <body class="light-theme">
     <div class="header">
@@ -13,7 +13,7 @@
         <div class="user-info">
             <div id="user-icon" class="user-icon"></div>
             <span id="user-name"></span>
-            <button class="theme-toggle" onclick="toggleTheme()">🌞</button>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
             <button class="logout-btn" onclick="signOutUser()">Logout</button>
         </div>
     </div>
@@ -60,5 +60,19 @@
             </div>
         </div>
     </div>
+    <script>
+        // On page load, populate user info and handle theme
+        window.onload = () => {
+            const userDisplayName = localStorage.getItem('userDisplayName');
+            const userIcon = localStorage.getItem('userIcon');
+
+            if (userDisplayName && userIcon) {
+                document.getElementById('user-name').textContent = userDisplayName;
+                document.getElementById('user-icon').textContent = userIcon;
+            } else {
+                window.location.href = 'http://127.0.0.1:8080/index.html';
+            }
+        };
+    </script>
 </body>
 </html>

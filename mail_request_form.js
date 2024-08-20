@@ -51,11 +51,10 @@ window.onload = () => {
             }
         });
     }
-    updateThemeIcon()
 };
 
 // Navigate to Mail Request Form
-window.goToMailRequest = () => {
+function goToMailRequest() {
     window.location.href = 'http://127.0.0.1:8080/mail_request_form.html';
 }
 
