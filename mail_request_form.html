@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="dashboard.css">
     <script src="mail_request_form.js" defer></script>
 </head>
+
 <body class="light-theme">
     <div class="header">
         <div class="logo">BIT-Mailer</div>
@@ -21,7 +23,6 @@
         <div class="sidebar">
             <div class="menu-title">Resources</div>
             <div class="menu-item" onclick="goToMailRequest()">Mail Request Form</div>
-            <div class="menu-item">Status</div>
         </div>
         <div class="content">
             <div class="form-container">
@@ -36,8 +37,16 @@
                     <label for="date">Date</label>
                     <input type="date" id="date" name="date" required>
 
-                    <label for="time">Time</label>
-                    <input type="time" id="time" name="time" required>
+                    <div class="time-fields">
+                        <div>
+                            <label for="from-time">From Time</label>
+                            <input type="time" id="from-time" name="from-time" required>
+                        </div>
+                        <div>
+                            <label for="to-time">To Time</label>
+                            <input type="time" id="to-time" name="to-time" required>
+                        </div>
+                    </div>
 
                     <label for="department">Department</label>
                     <select id="department" name="department" required>
@@ -55,7 +64,10 @@
                         <option value="4th">4th Year</option>
                     </select>
 
-                    <button type="submit">Submit</button>
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Submit</button>
+                        <button type="button" class="new-form-btn" onclick="openNewForm()">New Form</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -73,6 +85,11 @@
                 window.location.href = 'http://127.0.0.1:8080/index.html';
             }
         };
+
+        function openNewForm() {
+            document.getElementById('mail-request-form').reset();
+        }
     </script>
 </body>
+
 </html>
