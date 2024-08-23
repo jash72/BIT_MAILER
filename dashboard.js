@@ -46,78 +46,9 @@ window.signOutUser = () => {
     });
 };
 
-// On page load, check authentication status and update UI
-window.onload = () => {
-    console.log("Page loaded"); // Debugging
-
-    const userDisplayName = localStorage.getItem('userDisplayName');
-    const userIcon = localStorage.getItem('userIcon');
-
-    if (userDisplayName && userIcon) {
-        document.getElementById('user-name').textContent = userDisplayName;
-        document.getElementById('user-icon').textContent = userIcon;
-    } else {
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                const displayName = user.displayName || 'User';
-                const icon = (user.displayName || 'U').charAt(0).toUpperCase();
-                localStorage.setItem('userDisplayName', displayName);
-                localStorage.setItem('userIcon', icon);
-
-                document.getElementById('user-name').textContent = displayName;
-                document.getElementById('user-icon').textContent = icon;
-            } else {
-                window.location.href = 'http://127.0.0.1:8080/index.html';
-            }
-        });
-    }
-    updateThemeIcon(); 
-};
-
-let submissionsTable = `
-    <table>
-        <tr>
-            <th>Subject</th>
-            <th>To</th>
-            <th>Date</th>
-            <th>From Time</th>
-            <th>To Time</th>
-            <th>Department</th>
-            <th>Year</th>
-            <th>status</th>
-        </tr>`;
-
-
 // Navigate to Mail Request Form
 window.goToMailRequest = () => {
     window.location.href = 'http://127.0.0.1:8080/mail_request_form.html';
-}
-
-// Function to display form details in a modal
-function showFormDetails(submission) {
-    const formDetails = document.getElementById('form-details');
-    const modal = document.getElementById('form-details-modal');
-
-    formDetails.innerHTML = `
-        <p><strong>Subject:</strong> ${submission.subject}</p>
-        <p><strong>To:</strong> ${submission.to}</p>
-        <p><strong>Date:</strong> ${submission.date}</p>
-        <p><strong>From Time:</strong> ${submission.fromTime}</p>
-        <p><strong>To Time:</strong> ${submission.toTime}</p>
-        <p><strong>Department:</strong> ${submission.department}</p>
-        <p><strong>Year:</strong> ${submission.year}</p>
-        <p><strong>Content:</strong> ${submission.content}</p>
-        <p><strong>Status:</strong> <span class="${submission.status === 'Accepted' ? 'status-accepted' : submission.status === 'Rejected' ? 'status-rejected' : 'status-pending'}">${submission.status}</span></p>
-        ${submission.status === 'Rejected' ? `<p class="rejection-reason"><strong>Reason:</strong> ${submission.rejectionReason}</p>` : ''}
-    `;
-
-    modal.style.display = 'block';
-}
-
-// Function to close the modal
-function closeModal() {
-    const modal = document.getElementById('form-details-modal');
-    modal.style.display = 'none';
 }
 
 // Modify the existing code to handle form details display

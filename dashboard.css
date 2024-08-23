@@ -3,8 +3,6 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9fafb;
-    color: #333;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -16,8 +14,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -32,8 +28,6 @@ body {
 }
 
 .user-icon {
-    background-color: #fff;
-    color: #007bff;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -49,8 +43,7 @@ body {
     font-size: 18px;
 }
 
-.theme-toggle,
-.logout-btn {
+.theme-toggle, .logout-btn {
     margin-left: 10px;
     padding: 10px 15px;
     border-radius: 5px;
@@ -62,67 +55,13 @@ body {
     justify-content: center;
 }
 
-.theme-toggle {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.theme-toggle:hover {
-    background-color: #0056b3;
-}
-
 .logout-btn {
-    background-color: #dc3545;
     color: #fff;
+    background-color: #dc3545;
 }
 
 .logout-btn:hover {
     background-color: #c82333;
-}
-
-/* Light Theme */
-.light-theme {
-    background-color: #f0f0f0;
-    color: #000;
-}
-
-.light-theme .header {
-    background-color: #007bff;
-    color: white;
-}
-
-.light-theme .sidebar {
-    background-color: #f0f0f0;
-}
-
-.light-theme .menu-item {
-    color: white;
-}
-
-.light-theme .menu-item:hover {
-    text-decoration: underline;
-}
-
-/* Dark Theme */
-.dark-theme {
-    background-color: #333;
-    color: #fff;
-}
-
-.dark-theme .header {
-    background-color: #444;
-}
-
-.dark-theme .sidebar {
-    background-color: #555;
-}
-
-.dark-theme .menu-item {
-    color: #ddd;
-}
-
-.dark-theme .menu-item:hover {
-    text-decoration: none;
 }
 
 /* Sidebar */
@@ -143,7 +82,6 @@ body {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #333;
 }
 
 .menu-item {
@@ -151,27 +89,19 @@ body {
     font-size: 18px;
     cursor: pointer;
     border-radius: 5px;
-    background-color: #007bff;
-    color: #ffffff; 
     text-align: center;
     display: inline-block;
     margin-bottom: 10px;
-}
-
-.menu-item:hover {
-    background-color: #0056b3;
 }
 
 /* Content Area */
 .content {
     flex: 1;
     padding: 20px;
-    background-color: #fff;
     overflow-y: auto;
 }
 
 .form-container {
-    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -206,24 +136,13 @@ form input, form select {
     margin-top: 20px;
 }
 
-.submit-btn, .new-form-btn {
+.submit-btn, .new-form-btn, .back-btn {
     padding: 10px 20px;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
     border: none;
     color: white;
-}
-
-.back-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    color: white;
-    margin-left: 0;
-    margin-right: auto;
 }
 
 .submit-btn {
@@ -244,79 +163,13 @@ form input, form select {
 
 .back-btn {
     background-color: #007bff;
+    margin-left: 0;
+    margin-right: auto;
+    
 }
 
 .back-btn:hover {
     background-color: #0056b3;
-}
-
-/* Submitted Forms Container */
-.submitted-forms-container {
-    background-color: #f9f9f9;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.submitted-forms-container h3 {
-    margin-bottom: 15px;
-    font-size: 20px;
-}
-
-/* Table Styling */
-.submitted-forms-container table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-.submitted-forms-container th, 
-.submitted-forms-container td {
-    text-align: left;
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    vertical-align: middle;
-}
-
-.submitted-forms-container th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-    text-align: center;
-}
-
-.submitted-forms-container td {
-    text-align: center;
-}
-
-.submitted-forms-container tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.submitted-forms-container tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Form Status Styling */
-.submitted-form {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.form-details {
-    flex: 1;
-}
-
-.form-status {
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 .submitted-forms-container {
@@ -366,6 +219,21 @@ form input, form select {
     border-radius: 12px;
     color: white;
 }
+ .submission-box button {
+    padding: 10px 20px;
+    background-color: #45a049;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+ }
+
+ .submission-box button:hover {
+    background-color: #036d08;
+ }
 
 .status-pending {
     background-color: #f0ad4e; /* Yellow for pending */
@@ -420,4 +288,98 @@ form input, form select {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.light-theme {
+    background-color: #f9fafb;
+    color: #333;
+}
+
+.light-theme .header {
+    background-color: #007bff;
+    color: white;
+}
+
+.light-theme .sidebar {
+    background-color: #f0f0f0;
+}
+
+.light-theme .menu-item {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.light-theme .menu-item:hover {
+    background-color: #0056b3;
+}
+
+.light-theme .content, .light-theme .form-container {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.light-theme .submitted-forms-container {
+    background-color: #ffffff;
+}
+
+.light-theme .submission-box {
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+.light-theme .modal-content {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.light-theme .user-icon {
+    background-color: #ffffff;
+    color: #007bff;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-theme .header {
+    background-color: #444;
+    color: white;
+}
+
+.dark-theme .sidebar {
+    background-color: #555;
+}
+
+.dark-theme .menu-item {
+    background-color: #444;
+    color: #ddd;
+}
+
+.dark-theme .menu-item:hover {
+    background-color: #666;
+}
+
+.dark-theme .content, .dark-theme .form-container {
+    background-color: #444;
+    color: #ddd;
+}
+
+.dark-theme .submitted-forms-container {
+    background-color: #444;
+}
+
+.dark-theme .submission-box {
+    background-color: #555;
+    color: #ddd;
+}
+
+.dark-theme .modal-content {
+    background-color: #444;
+    color: #ddd;
+}
+
+.dark-theme .user-icon {
+    background-color: #666;
+    color: #ddd;
 }
