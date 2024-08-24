@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mail Request Form</title>
-    <link rel="stylesheet" href="dashboard.css">
-    <script src="mail_request_form.js" defer></script>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="js/dashboard.js" defer></script>
 </head>
 
 <body class="light-theme">
@@ -68,7 +68,7 @@
                     </select>
 
                     <div class="form-actions">
-                        <button type="button" class="back-btn" onclick="window.location.href='dashboard.html'">Back</button>
+                        <button type="button" class="back-btn" onclick="window.location.href='dashboard.html'">clear</button>
                         <button type="submit" class="submit-btn">Submit</button>
                         <button type="button" class="new-form-btn" onclick="openNewForm()">New Form</button>
                     </div>
@@ -86,14 +86,14 @@
                 document.getElementById('user-name').textContent = userDisplayName;
                 document.getElementById('user-icon').textContent = userIcon;
             } else {
-                window.location.href = 'http://127.0.0.1:8080/index.html';
+                window.location.href = '/index.html';
             }
         };
         // Function to sign out the user
         window.signOutUser = () => {
             signOut(auth).then(() => {
                 localStorage.clear();
-                window.location.href = 'http://127.0.0.1:8080/index.html';
+                window.location.href = '/index.html';
             }).catch((error) => {
                 console.error('Error signing out:', error);
             });
@@ -158,7 +158,7 @@
     localStorage.setItem('formSubmissions', JSON.stringify(formSubmissions));
 
     // Redirect to the dashboard
-    window.location.href = 'dashboard.html';
+    window.location.href = '/dashboard.html';
 });
 
 

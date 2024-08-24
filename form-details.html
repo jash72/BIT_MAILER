@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Details</title>
-    <link rel="stylesheet" href="admin.css">
-    <script src="form-details.js" defer></script>
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="js/form-details.js" defer></script>
 </head>
 <body>
     <div class="form-details-container">
@@ -13,8 +13,8 @@
         <div id="form-details">
             <!-- Form details will be dynamically added here -->
         </div>
-        <button id="accept-btn">Accept</button>
-        <button id="reject-btn">Reject</button>
+        <button style="background-color: #28a745;" id="accept-btn">Accept</button>
+        <button style="background-color: #dc3545;" id="reject-btn">Reject</button>
 
         <!-- Modal for Rejection Reason -->
         <div id="rejection-modal" class="modal">
@@ -22,7 +22,7 @@
                 <span class="close-btn">&times;</span>
                 <h3>Rejection Reason</h3>
                 <textarea id="rejection-reason" placeholder="Enter reason for rejection..."></textarea>
-                <button id="submit-reason-btn">Submit</button>
+                <button style="background-color: rgb(87, 87, 244);" id="submit-reason-btn">Submit</button>
             </div>
         </div>
     </div>

@@ -5,7 +5,7 @@
     <link rel="shortcut icon" type="bit-icon" href="bit_logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIT-MAILER</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
         import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
@@ -29,7 +29,7 @@
                 .then((result) => {
                     const user = result.user;
                     localStorage.setItem('userName', user.displayName);
-                    window.location.href = 'http://127.0.0.1:8080/dashboard.html';
+                    window.location.href = '/dashboard.html';
                 })
                 .catch((error) => {
                     console.error('Error signing in:', error);
@@ -40,7 +40,7 @@
 <body class="light-theme">
     <div id="login-page" class="login_page">
         <div class="welcome">Welcome Back!</div>
-        <img src="bit_logo.png" alt="College Logo" class="logo">
+        <img src="src/img/bit_logo.png" alt="College Logo" class="logo">
         <div class="project_name">BIT Mailer</div>
         <hr class="divider">
         <button class="login_button" onclick="signInWithGoogle()">Google Sign In</button>

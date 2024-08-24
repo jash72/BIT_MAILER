@@ -1,4 +1,3 @@
-// Extract the form index from the URL query parameters
 const urlParams = new URLSearchParams(window.location.search);
 const formIndex = urlParams.get('index');
 
@@ -23,16 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
         formDetailsContainer.innerHTML = '<p>Form not found.</p>';
     }
 
-    // Handle accept and reject buttons
     document.getElementById('accept-btn').addEventListener('click', () => {
         updateFormStatus(formIndex, 'Accepted');
+        window.location.href = '/admin.html';
     });
 
     document.getElementById('reject-btn').addEventListener('click', () => {
         openRejectionModal();
     });
 
-    // Handle rejection reason submission
     document.getElementById('submit-reason-btn').addEventListener('click', () => {
         const reason = document.getElementById('rejection-reason').value.trim();
         if (reason) {
@@ -43,11 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Handle closing the rejection modal
     document.querySelector('.close-btn').addEventListener('click', closeRejectionModal);
 });
 
-// Function to update form status in localStorage
 function updateFormStatus(index, status, rejectionReason = '') {
     let formSubmissions = JSON.parse(localStorage.getItem('formSubmissions')) || [];
     formSubmissions[index].status = status;
@@ -56,17 +52,14 @@ function updateFormStatus(index, status, rejectionReason = '') {
     }
     localStorage.setItem('formSubmissions', JSON.stringify(formSubmissions));
 
-    // Redirect back to the dashboard
-    window.location.href = 'dashboard.html';
+    window.location.href = 'admin.html';
 }
 
-// Function to open the rejection modal
 function openRejectionModal() {
     const modal = document.getElementById('rejection-modal');
     modal.style.display = 'block';
 }
 
-// Function to close the rejection modal
 function closeRejectionModal() {
     const modal = document.getElementById('rejection-modal');
     modal.style.display = 'none';
